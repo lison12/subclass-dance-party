@@ -29,6 +29,40 @@ $(document).ready(function() {
     );
     window.dancers.push(dancer);
     $('body').append(dancer.$node);
+
   });
+
+
+  $('.lineUpButton').on('click', function(event) {
+
+    // var dancerMakerFunctionName = $(this).data('dancer-maker-function-name');
+
+    // get the maker function for the kind of dancer we're supposed to make
+    // var dancerMakerFunction = window[dancerMakerFunctionName];
+
+    // make a dancer with a random position
+
+    for (i = 0; i < window.dancers.length; i++) {
+      // for loop window.dancers
+        // for each dancer
+      window.dancers[i].lineUp()
+          // apply new top location (jquery)
+          // self invoke this function
+    }
+
+  });
+
+  $('.secretButton').on('click', function(event) {
+
+      for (i = 0; i < window.dancers.length; i++) {
+        window.dancers[i].mouseover(); 
+      this.$node.append('<img onmouseover=this.src="green.png" class="dancer"></img>');  
+      }
+
+  });
+
+
+
 });
+
 
